@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Cronograma</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+
+
+<ion-content>
+  <div class="tabla">
+    <table>
+      <thead>
+        <th>No.</th>
+        <th>Nombre de la actividad</th>
+        <th>P R</th>
+        <th *ngFor="let semana of semanas">S{{semana+1}}</th>
+        <th>Area</th>
+        <th>Persona asignada</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let tarea of tareasInfo; let i = index">
+          <td>
+            {{i+1}}
+          </td>
+          <td>
+            {{tarea.nombre}}
+          </td>
+          <td class="PR">
+            P R
+          </td>
+          <td *ngFor="let semana of semanas">
+  
+          </td>
+          <td>
+            {{tarea.area.nombre}}
+          </td>
+          <td>
+            {{tarea.personaAsginada.nombre}}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <div class="buttons">
+    <ion-button (click)="toTask()">
+      Crear Tarea
+    </ion-button>
+  </div>
+</ion-content>
+
+
+
+
+
+
+
+
+
+

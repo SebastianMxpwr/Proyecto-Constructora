@@ -1,0 +1,44 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>
+      Tus tareas
+    </ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="logout()">
+        Salir
+        <ion-icon slot="end" name="log-out-outline" ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="lienzo">
+    <div id="buscador">
+      <p>Buscar</p>
+      <ion-input [(ngModel)]="textoDeBusqueda"><ion-icon name="search-outline" ></ion-icon></ion-input>      
+    </div>
+    <div id="proyectos">
+      <div class="proyecto" *ngFor="let tarea of tareas | busqueda2: textoDeBusqueda " (click)="toInfo(tarea._id)">
+        <div class="informacion">
+          <h3>{{tarea.nombre}}</h3>
+          <p>{{tarea.detalles}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>
+
+
+
+
+<!-- <footer>
+
+
+      <ion-button size="large" [routerLink]="['/registro-proyectos']">
+        <ion-icon slot="icon-only" name="add-circle"></ion-icon>
+      </ion-button>
+
+
+</footer> -->
+

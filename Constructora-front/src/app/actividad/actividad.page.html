@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Actividad de todos los proyectos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="actividad">
+    <div class="datos_de_entrada">
+      <div class="datos">
+
+        <p>{{title}}</p>
+        <ion-input disabled="true" >{{proyectosActivos}}</ion-input> 
+
+      </div>
+      <div class="datos">
+        <p>No. de gerentes/jefes</p>
+        <ion-input [disabled]="true">{{jefesOgerentes}}</ion-input>
+      </div>
+      <div class="datos">
+        <p>No. empleados(total)</p>
+        <ion-input disabled="true">{{totalPersonal}}</ion-input>
+      </div>
+    </div>
+    <div class="graficas">
+      <div class="grafica1">
+        <p>Vista de ganancias, costos de mano de obra y costos de materiales</p>
+        <div class="top">
+          <ion-item>
+            <ion-badge slot="start" color="danger">0</ion-badge>
+            <ion-label>Mano de obra</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-badge slot="start" color="success">0</ion-badge>
+            <ion-label>Ganancias</ion-label>
+          </ion-item>
+        </div>
+        <div class="bottom">
+          <ion-item>
+            <ion-badge slot="start" color="primary">0</ion-badge>
+            <ion-label>Materiales</ion-label>
+          </ion-item>
+        </div>
+        <div class="grafica">
+          <apx-chart
+          [chart]="options.chart"
+          [series]="options.series"
+          [plotOptions]="options.plotOptions"
+          [colors]="options.colors"
+          [dataLabels]="options.dataLabels"
+          [legend]="options.legend"
+          [xaxis]="options.xaxis">
+        </apx-chart>
+        </div>
+      </div>
+      <div class="grafica2">
+        <p>Total de tareas (completadas/pendientes)</p>
+        <div class="top">
+          <ion-item>
+            <ion-badge slot="start" color="success">0</ion-badge>
+            <ion-label>Completadas</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-badge slot="start" color="danger">0</ion-badge>
+            <ion-label>Pendientes</ion-label>
+          </ion-item>
+        </div>
+        <div class="grafica">
+          <apx-chart
+          [chart]="radial.chart"
+          [series]="radial.series"
+          [labels]="radial.labels"
+          [colors]="radial.colors">
+          </apx-chart>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</ion-content>

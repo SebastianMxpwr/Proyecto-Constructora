@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@200;400;500&display=swap');
+
+ion-header{
+    ion-toolbar{
+        --background: #454546;
+
+    }
+}
+
+ion-content{
+    --background: #D9D9D9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .actividad{
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+        .datos_de_entrada{
+            font-family: 'Public Sans', sans-serif;
+            align-self: flex-start;
+            width: 60%;
+            margin: 15px;
+            .datos{
+                display: flex;
+                align-items: center;
+                color: black;
+                p{
+                    font-size: 15px;
+                    font-weight: 700;
+                }
+                ion-input{
+                    --background: #E7E7E7;
+                    --color: black;
+                    padding-left: 40px;
+                    border: 1px solid #8d8d8d80;
+                    border-radius: 10px;
+                    margin-left: 10px;
+                    height: 30px;
+                    text-align: center;
+                }
+            }
+        }
+        .graficas{
+            display: flex;
+            flex-direction: column;
+            align-items: center;  
+            .grafica1{
+                font-family: 'Public Sans', sans-serif;
+                text-align: center;
+                p{
+                    color: black;
+                    font-size: 15px;
+                    font-weight: 600;
+                }
+                .top{
+                    width: 90%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-around;
+                    ion-item{
+                        --background: #D9D9D9;
+                        --color:black;
+                        font-weight: 400;
+                        ion-badge{
+                            color:rgba(148, 14, 166, 0);
+                        }
+                    }
+                }
+                .bottom{
+                    margin: 15px 0px 20px 0px;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    ion-item{
+                        --background: #D9D9D9;
+                        --color:black;
+                        font-weight: 400;
+                        ion-badge{
+                            color:rgba(148, 14, 166, 0);
+                        }
+                    }
+                }
+            }
+            .grafica2{
+                font-family: 'Public Sans', sans-serif;
+                text-align: center;
+                width: 100%;
+                p{
+                    color: black;
+                    font-size: 15px;
+                    font-weight: 600;
+                }
+                .top{
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-evenly;
+                    ion-item{
+                        --background: #D9D9D9;
+                        --color:black;
+                        font-weight: 400;
+                        ion-badge{
+                            color:rgba(148, 14, 166, 0);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+

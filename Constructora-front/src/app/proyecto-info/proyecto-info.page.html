@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{informacion.nombre}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="proyecto">
+    <div class="img-proyecto">
+      <img [src]="'http://localhost:3000/' + informacion.imgProyecto" alt="">
+    </div>
+    <div class="grafica">
+      <p><strong>Inversiones / ganancias</strong></p>
+      <apx-chart
+      [chart]="options.chart"
+      [series]="options.series"
+      [labels]="options.labels"
+      [colors]="options.colors"
+      >
+    </apx-chart>
+    </div>
+    <div class="cronograma-link">
+      <h3>
+        Cronograma de Actividades
+      </h3>
+      <div id="cronograma" (click)="toCronograma()">
+        <div class="proyecto">
+          <div class="cuadrado">
+            <h1>Ver</h1>
+          </div>
+          <div class="informacion">
+            <p><strong>Cronograma</strong></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="personal">
+      <h3>Personal Involucrado</h3>
+      <div class="Area-jefes">
+          <p>Altos mandos</p>
+          <div class="jefes" *ngFor="let jefe of nombreJefes">
+            <p>
+              <ion-icon name="square"></ion-icon>
+              {{jefe}}
+            </p>
+          </div>
+      </div>
+      <div class="Area-jefes">
+          <p>Area asignada</p>
+          <div class="jefes">
+            <p>
+              <ion-icon name="square"></ion-icon>
+              {{area.nombre}}
+            </p>
+          </div>
+      </div>
+    </div>
+  </div>
+
+
+</ion-content>

@@ -1,0 +1,7 @@
+{
+  "name": "Constructora-front",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,34 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>
+      {{tittle}}
+    </ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="logout()">
+        Salir
+        <ion-icon slot="end" name="log-out-outline" ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="lienzo">
+    <div id="buscador">
+      <p>Buscar</p>
+      <ion-input [(ngModel)]="textoDeBusqueda"><ion-icon name="search-outline" ></ion-icon></ion-input>      
+    </div>
+    <div id="proyectos">
+      <div class="proyecto" *ngFor="let proyecto of proyectos | busqueda: textoDeBusqueda " (click)="toInfo(proyecto._id)">
+        <ion-img [src]="'http://localhost:3000/' + proyecto.imgProyecto" alt="foto_proyecto"></ion-img>
+        <div class="informacion">
+          <h3>{{proyecto.nombre}}</h3>
+          <p>{{proyecto.descripcion}}</p>
+        </div>
+      </div>
+    </div>
+    <ion-button slot="fixed" routerLink="/registro-proyectos"><ion-icon name="add-outline"></ion-icon></ion-button>
+  </div>
+
+</ion-content>
+

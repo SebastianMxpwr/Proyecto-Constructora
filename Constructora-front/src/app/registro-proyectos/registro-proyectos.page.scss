@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@200;400;500&display=swap');
+
+ion-header{
+    ion-toolbar{
+        --background: #454546;
+
+    }
+}
+
+ion-content{
+    font-family: 'Public Sans', sans-serif;
+    --background: #454546;
+    display: flex;
+    flex-direction: column;
+    .form{ 
+        min-height: 100%;
+        width: 100%;
+        background: #D9D9D9;
+        display: flex;
+        flex-direction: column;
+        .img-proyecto{
+            .input{
+                display: flex;
+                align-items: center;
+                width: 100%;
+                margin: 5px 0px 15px 10px;
+                ion-label{
+                    color: black;
+                    font-size: 14px;
+                    margin-right: 14px;
+                }
+                ion-item{
+                    --background: #E7E7E7;
+                    --color: black;
+                    border: 1px solid rgba(141, 141, 141, 0.42);
+                    box-shadow: -2px 5px 4px rgba(0, 0, 0, 0.25);
+                    border-radius: 10px;
+                    width: 80%;
+                    height: 40px;
+                }
+            }
+            width: 100%;
+            color: black;
+            margin: 20px 0px 10px 0px;
+            p{
+                margin-left: 10px;
+            }
+            .photo{
+                text-align: center;
+                img{
+                    object-fit: cover;
+                    width: 100%;
+                    height: 250px;
+                }
+                input[type="file"] {
+                    display: none;
+                }
+            }
+        }
+
+        .inputs{
+            margin: 10px;
+            display: flex;
+            flex-direction: column;
+            .input-area{
+                color: black;
+                ion-item{
+                    --background: #E7E7E7;
+                    --color: black;
+                    border-radius: 10px;
+                    min-height: 140px;
+                    margin: 12px 0px 20px 0px;
+                    box-shadow: -2px 5px 4px rgba(0, 0, 0, 0.25);
+                    ion-textarea{
+                        min-height: 140px;
+                        min-width: 200px;
+                        max-width: 250px;
+                    }
+                }
+            }
+            .input{
+                display: flex;
+                width: 100%;
+                align-items: center;
+                width: 100%;
+                margin: 5px 0px 15px 0px;
+                ion-label{
+                    color: black;
+                    font-size: 14px;
+                }
+                ion-item{
+                    --background: #E7E7E7;
+                    --color: black;
+                    border: 1px solid rgba(141, 141, 141, 0.42);
+                    box-shadow: -2px 5px 4px rgba(0, 0, 0, 0.25);
+                    border-radius: 10px;
+                    width: 100%;
+                    height: 40px;
+                }
+            }
+            .all-personal{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                .personal{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    color: #000;
+                    margin-bottom: 50px;
+                    .eleccion{
+                        .input-select{
+                            --background: #E7E7E7;
+                            --color: black;
+                            border-radius: 10px;
+                            height: 40px;
+                            box-shadow: -2px 5px 4px rgba(0, 0, 0, 0.25);
+                            text-align: center;
+                            max-width: 250px;
+                        }
+                        .input-text{
+                            --background: #E7E7E7;
+                            --color: black;
+                            border-radius: 10px;
+                            min-height: 140px;
+                            border: 2px solid #8D8D8D;
+                            margin-top: 12px;
+                            .text-area{
+                                min-height: 140px;
+                                min-width: 200px;
+                                max-width: 250px;
+                            }
+                        }
+                    }
+                }
+            }
+            
+        }
+        .buttons{
+            text-align: center;
+            ion-button{
+                --background: #3D0948;
+                --border-radius: 22px;
+                width: 178px;
+                height: 41px;
+                color: #E7E7E7;
+            }
+        }
+    }
+
+}

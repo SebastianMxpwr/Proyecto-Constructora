@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Crear una area</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="form">
+    <div class="nombre">
+      <h3>Datos del area</h3>
+      <div class="nombre-input">
+        <p>Nombre</p>
+        <ion-item lines="none">
+          <ion-input [(ngModel)]="area.nombre"></ion-input>
+        </ion-item>
+      </div>
+    </div>
+    <div class="all-personal">
+      <div class="personal">
+        <p>Personas a cargo</p>
+        <div class="eleccion">
+          <ion-item lines="none" class="input-select">
+          <ion-select 
+          placeholder="baja" 
+          [multiple]="true" 
+          [(ngModel)]="area.Jefes"
+          (ionDismiss)="mostrarNombreJefes()">
+            <ion-select-option *ngFor="let jefe of personalJefes" [value]="jefe">{{jefe.nombre}}</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item lines="none" class="input-text">
+          <div class="text-area">
+            <p *ngFor="let nombre of nombreJefes">{{nombre}}</p>
+          </div>         
+        </ion-item>
+        </div>
+      </div>
+      <div class="personal">
+        <p>Personal</p>
+        <div class="eleccion">
+          <ion-item lines="none" class="input-select">
+          <ion-select 
+          placeholder="baja" 
+          [multiple]="true" 
+          [(ngModel)]="area.Trabajadores"
+          (ionDismiss)="mostrarNombrePersonal()">
+            <ion-select-option *ngFor="let personalof of personalNormal" [value]="personalof">{{personalof.nombre}}, {{personalof.tipoEmpleado}}</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item lines="none" class="input-text">
+          <div class="text-area">
+            <p *ngFor="let nombre of nombrepersonal">{{nombre}}</p>
+          </div>   
+        </ion-item>
+        </div>
+      </div>
+    </div>
+    <div class="buttons">
+      <ion-button (click)="crearArea()">Crear</ion-button>
+    </div>
+  </div>
+  
+</ion-content>

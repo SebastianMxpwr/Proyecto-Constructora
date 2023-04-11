@@ -1,0 +1,101 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title> Agregar Nuevo Proyecto </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="form">
+    <div class="img-proyecto">
+      <div class="input">
+        <ion-label>Nombre</ion-label>
+        <ion-item lines="none">
+          <ion-input [(ngModel)]="proyecto.nombre"></ion-input>
+        </ion-item>
+      </div>
+      <p>Imagen del proyecto</p>
+      <div class="photo">
+        <img alt="profile-picture" [src]="photoSelected ||'https://ionicframework.com/docs/img/demos/avatar.svg'" alt="No image"
+        (click)="photoInput.click()">
+        <input type="file" class="d-none" (change)="onPhotoSelected($event)" #photoInput>
+      </div>
+    </div>
+    <div class="inputs">
+      <div class="input-area">
+        <ion-label position="floating">Descripcion:</ion-label>
+        <ion-item>
+          <ion-textarea [(ngModel)]="proyecto.descripcion"></ion-textarea>
+        </ion-item>
+      </div>
+      <div class="input">
+        <ion-label>Presupuesto total</ion-label>
+        <ion-item lines="none">
+          <ion-input [(ngModel)]="proyecto.presupuestoTotal"></ion-input>
+        </ion-item>
+      </div>
+      <div class="input">
+        <ion-label>Materiales esperados</ion-label>
+        <ion-item lines="none">
+          <ion-input [(ngModel)]="proyecto.materialesEsperados"></ion-input>
+        </ion-item>
+      </div>
+      <div class="input">
+        <ion-label>Mano de obra esperada</ion-label>
+        <ion-item lines="none">
+          <ion-input [(ngModel)]="proyecto.manoObra"></ion-input>
+        </ion-item>
+      </div>
+      <div class="input">
+        <ion-label>Tiempo del proyecto (en semanas)</ion-label>
+        <ion-item lines="none">
+          <ion-input [(ngModel)]="proyecto.tiempoProyectoSemanas"></ion-input>
+        </ion-item>
+      </div>
+      <div class="all-personal">
+        <div class="personal">
+          <p>Personas a cargo</p>
+          <div class="eleccion">
+            <ion-item lines="none" class="input-select">
+            <ion-select 
+            placeholder="baja" 
+            [multiple]="true"
+            [(ngModel)]="proyecto.personasCargo"
+            (ionDismiss)="mostrarNombreJefes()">
+              <ion-select-option *ngFor="let jefe of jefes" [value]="jefe">{{jefe.nombre}}</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-item lines="none" class="input-text">
+            <div class="text-area">
+              <p *ngFor="let nombre of nombreJefes">{{nombre}}</p>
+            </div>         
+          </ion-item>
+          </div>
+        </div>
+        <div class="personal">
+          <p>Area a cargo</p>
+          <div class="eleccion">
+            <ion-item lines="none" class="input-select">
+            <ion-select 
+            placeholder="baja" 
+            [(ngModel)]="proyecto.areaAsginada"
+            (ionDismiss)="mostrarNombreArea()">
+              <ion-select-option *ngFor="let area of area" [value]="area">{{area.nombre}}</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-item lines="none" class="input-text">
+            <div class="text-area">
+              <p>{{nombreArea}}</p>
+            </div>         
+          </ion-item>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="buttons">
+      <ion-button (click)="RegistrarProyecto()">Crear proyecto</ion-button>
+    </div>
+  </div>
+</ion-content>

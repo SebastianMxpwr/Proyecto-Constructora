@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Nuevo Empleado</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="form">
+    <div class="foto">
+      <img (click)="photoInput.click()" alt="profile-picture" [src]="photoSelected || 'https://ionicframework.com/docs/img/demos/avatar.svg'" alt="No image">
+      <input type="file" class="d-none" (change)="onPhotoSelected($event)" #photoInput>
+    </div>
+    <div class="datos-contacto">
+      <h3>Datos de contacto</h3>
+      <div class="datos">
+        <div class="input">
+          <ion-label>Nombre</ion-label>
+          <ion-item>
+            <ion-input placeholder="Ex. Federico" [(ngModel)]="usuario.nombre"></ion-input>
+          </ion-item>
+        </div>
+        <div class="input">
+          <ion-label>Correo</ion-label>
+          <ion-item>
+            <ion-input placeholder="Ex. correo@empresa.com" [(ngModel)]="usuario.correo"></ion-input>
+          </ion-item>
+        </div>
+        <div class="input">
+          <ion-label>Contraseña</ion-label>
+         <ion-item>
+            <ion-input placeholder="Ex. 12345678" [(ngModel)]="usuario.contrasena"></ion-input>
+          </ion-item>
+        </div>
+        <div class="input">
+          <ion-label>Numero Telefono</ion-label>
+          <ion-item>
+            <ion-input placeholder="Ex. 4491234567" [(ngModel)]="usuario.numeroTelefono"></ion-input>
+          </ion-item>
+        </div>
+      </div>
+    </div>
+    <div class="area">
+      <div class="datos">
+        <div class="input">
+          <ion-label>Area</ion-label>
+          <ion-item>
+            <ion-select placeholder="Area 1" [(ngModel)]="usuario.area">
+              <ion-select-option *ngFor="let area of areas" [value]="area" >{{area.nombre}}</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </div>
+        <div class="input">
+          <ion-label>Tipo de empleado</ion-label>
+          <ion-item>
+            <ion-select placeholder="Normal" [(ngModel)]="usuario.tipoEmpleado">
+              <ion-select-option value="Jefe">Jefe</ion-select-option>
+              <ion-select-option value="normal">Normal</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </div>
+      </div>
+    </div>
+    <div class="otrosDatos">
+      <h2>Datos personales</h2>
+      <div class ="datos">
+        <div class="input">
+          <ion-label>Dato 1</ion-label>
+          <ion-item>
+            <ion-input placeholder="Algo"></ion-input>
+          </ion-item>
+        </div>
+      </div>
+    </div>
+    <div class="buttons">
+      <ion-button (click)="crearUsuario()">Crear</ion-button>
+    </div>
+  </div>
+</ion-content>

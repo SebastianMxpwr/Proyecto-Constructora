@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Cuenta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="personalitation">
+    <div class="img-portada">
+      <ion-img [src]="'http://localhost:3000/' + usuario.imgPortada || 'https://docs-demo.ionic.io/assets/madison.jpg'"></ion-img>
+    </div>
+    <div class="img-profile">
+      <img [src]="'http://localhost:3000/' + usuario.imgPerfil || 'https://docs-demo.ionic.io/assets/madison.jpg'">
+    </div>
+    <div class="datos-contacto">
+      <ion-label>Datos de contacto</ion-label>
+      <div class="datos">
+        <div class="correo">
+          <p><strong>{{usuario.correo}}</strong></p>
+          <p>Correo</p>
+        </div>
+        <div class="numero">
+          <p><strong>{{usuario.numeroTelefono}}</strong></p>
+          <p>Numero de telefono</p>
+        </div>
+      </div>
+    </div>
+    <div class="datos-personales">
+      <ion-label>Datos personales</ion-label>
+      <div class="datos">
+        <p><strong>Dato 1:</strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam molestias vel voluptas possimus laborum. Ut laudantium voluptatibus adipisci quo doloribus sequi corporis ea repellat quos, exercitationem esse quaerat aut provident.</p>
+      </div>
+    </div>
+    <div class="buttons" *ngIf="usuario.tipoEmpleado == 'Jefe' || usuario.tipoEmpleado == 'jefe' || usuario.tipoEmpleado == 'JefeSupremo'">
+      <ion-button (click)="agreagarUsuarios()">Agregar nuevo usuario<ion-icon name="person-add-outline" slot="end"></ion-icon></ion-button>
+      <ion-button (click)="agreagarArea()">Crear una nueva area<ion-icon name="apps-outline" slot="end"></ion-icon></ion-button>
+    </div>
+  </div>
+</ion-content>
+

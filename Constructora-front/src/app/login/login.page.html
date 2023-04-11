@@ -1,0 +1,23 @@
+<ion-content>
+  <div class="content">
+    <div class="top">
+      <h1>Bienvenido de vuelta, Ingresa para empezar!</h1>
+      <img src="../../assets/imgs/undraw_under_construction_46pa.png">
+    </div>
+  </div>
+  <form>
+    <div class="form">
+      <ion-label>Usuario / Email</ion-label>
+        <ion-item>
+          <ion-input id="Email" type="email" placeholder="Ej.correo@empresa.com" name="email" [(ngModel)]="user.correo"></ion-input>
+        </ion-item>
+        <ion-label>Contraseña</ion-label>
+        <ion-item>
+          <ion-input id="Password" type="password" placeholder="Ej.1234" name="password" [(ngModel)]="user.contrasena"></ion-input>
+        </ion-item>
+    </div>
+  </form>
+  <div class="buttons">
+    <ion-button id="login" type="submit" (click)="login()">Ingresar</ion-button>
+  </div>
+</ion-content>

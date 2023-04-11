@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@200;400;500&display=swap');
+
+ion-header{
+    ion-toolbar{
+        --background: #454546;
+
+    }
+}
+
+ion-content{
+    font-family: 'Public Sans', sans-serif;
+    --background: #D9D9D9;
+    display: flex;
+    flex-direction: column;
+    .form{
+        display: flex;
+        flex-direction: column;
+        margin: 10% 0 2% 1%;
+        .input-select{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            color: #000000;
+            width: 90%;
+            margin-left: 10%;
+            margin-bottom: 30px;
+            ion-label{
+                font-family: 'Public Sans', sans-serif;
+                font-size: 15px;
+                font-weight: 500;
+            }
+            ion-item{
+                --background: #E7E7E7;
+                --color: black;
+                border-radius: 15px;
+                margin-left: 20px;
+                box-shadow: -2px 5px 4px rgba(0, 0, 0, 0.25);
+                width: 50%;
+                text-align: center;
+            }
+        }
+        .input{
+            display: flex;
+            flex-direction: row;
+            justify-content:left;
+            align-items: center;
+            color: #000000;
+            width: 90%;
+            margin-left: 10%;
+            margin-bottom: 30px;
+            ion-label{
+                font-family: 'Public Sans', sans-serif;
+                font-size: 15px;
+                font-weight: 500;
+
+            }
+            ion-item{
+                --background: #E7E7E7;
+                --color: black;
+                border-radius: 15px;
+                margin-left: 20px;
+                box-shadow: -2px 5px 4px rgba(0, 0, 0, 0.25);
+                width: 60%;
+                text-align: center;
+                
+            }
+        }
+        .input-area{
+            display: flex;
+            flex-direction: column;
+            color: #000000;
+            width: 100%;
+            margin-left: 10%;
+            margin-bottom: 30px;
+            ion-label{
+                font-family: 'Public Sans', sans-serif;
+                font-size: 15px;
+                font-weight: 500;
+
+            }
+            ion-item{
+                --background: #E7E7E7;
+                --color: black;
+                border-radius: 15px;
+                box-shadow: -2px 5px 4px rgba(0, 0, 0, 0.25);
+                width: 70%;
+                text-align: center;
+                ion-textarea{
+                    height: 120px;
+                }
+            }
+        }
+        .buttons{
+            text-align: center;
+            ion-button{
+                --background: #3D0948;
+                --border-radius:  22px;
+                --color: #CAC9CB; 
+                width: 178px;
+                height: 41px;
+            }
+        }
+    }
+}
